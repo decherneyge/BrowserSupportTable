@@ -1,0 +1,9 @@
+<div>
+    <b><browser-check-box name="{{$ctrl.browser.name}}" ng-model="$ctrl.browser.supported" ng-change="$ctrl.updateBrowser()"></browser-check-box></b>
+    <ul class="list-unstyled" style="margin-left:15px;">
+        <li ng-repeat="supportedVersion in $ctrl.browser.support  | limitTo: $ctrl.versionLimit">
+            <browser-check-box name="{{supportedVersion.version}}" ng-model="supportedVersion.supported" ng-change="$ctrl.updateBrowser()"></browser-check-box>
+
+        </li>
+    </ul>
+</div>

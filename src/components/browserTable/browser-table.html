@@ -1,0 +1,22 @@
+<table class="table text-center">
+    <thead>
+    <tr>
+        <th ng-repeat="browser in $ctrl.config">{{browser.name}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td ng-repeat="browser in $ctrl.config" ng-class="{'bg-success':$ctrl.hasFullSupport(browser),'bg-danger':!$ctrl.hasFullSupport(browser)}">
+            <img ng-src="{{browser.image}}" alt="{{browser.name}}">
+            <hr>
+            <p  >{{$ctrl.generateSupportDescription(browser)}}</p>
+            <hr>
+            <ul class="list-unstyled">
+                <li ng-repeat="support in browser.support | limitTo:$ctrl.versionLimit"
+                    ng-class="{'bg-success':browser.supported && support.supported,'bg-danger':! browser.supported && support.supported}">{{support.version}}
+                </li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
