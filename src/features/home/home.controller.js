@@ -12,7 +12,7 @@ export default class HomeController {
                 image: require('../../../node_modules/@browser-logos/internet-explorer_9-11/internet-explorer_9-11_128x128.png'),
                 support: [
                     {version: '11', supported: true},
-                    {version: '10', supported: true},
+                    {version: '10', supported: false},
                     {version: '9', supported: false},
                     {version: '8', supported: false}
                 ]
@@ -22,6 +22,7 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/edge/edge_128x128.png'),
                 support: [
+                    {version: '18', supported: true},
                     {version: '17', supported: true},
                     {version: '16', supported: true},
                     {version: '15', supported: true},
@@ -36,6 +37,13 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/firefox/firefox_128x128.png'),
                 support: [
+                    {version: "68", supported: true},
+                    {version: "67", supported: true},
+                    {version: "66", supported: true},
+                    {version: "65", supported: true},
+                    {version: "64", supported: true},
+                    {version: "63", supported: true},
+                    {version: "62", supported: true},
                     {version: "61", supported: true},
                     {version: "60", supported: true},
                     {version: "59", supported: true},
@@ -75,6 +83,15 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/chrome/chrome_128x128.png'),
                 support: [
+                    {version: "76", supported: true},
+                    {version: "75", supported: true},
+                    {version: "74", supported: true},
+                    {version: "73", supported: true},
+                    {version: "72", supported: true},
+                    {version: "71", supported: true},
+                    {version: "70", supported: true},
+                    {version: "69", supported: true},
+                    {version: "68", supported: true},
                     {version: "67", supported: true},
                     {version: "66", supported: true},
                     {version: "65", supported: true},
@@ -120,7 +137,8 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/safari/safari_128x128.png'),
                 support: [
-                    {version: "TP", supported: true},
+                    {version: "12.1", supported: true},
+                    {version: "12", supported: true},
                     {version: "11.1", supported: true},
                     {version: "11", supported: true},
                     {version: "10.1", supported: true},
@@ -142,6 +160,16 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/opera/opera_128x128.png'),
                 support: [
+                    {version: "62", supported: true},
+                    {version: "61", supported: true},
+                    {version: "60", supported: true},
+                    {version: "59", supported: true},
+                    {version: "58", supported: true},
+                    {version: "57", supported: true},
+                    {version: "56", supported: true},
+                    {version: "55", supported: true},
+                    {version: "54", supported: true},
+                    {version: "53", supported: true},
                     {version: "52", supported: true},
                     {version: "51", supported: true},
                     {version: "50", supported: true},
