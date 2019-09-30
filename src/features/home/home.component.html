@@ -4,11 +4,19 @@
     <form>
         <hr>
         <div class="row mb-2">
-            <div class="col-sm">
+            <div class="col-sm-8">
                 <div class="form-group d-flex justify-content-center">
                     <label for="versionLimit" class="form-text mr-2">Only Show This Many Past Versions</label>
                     <input type="number" class="form-control col-sm-1" id="versionLimit" placeholder="5"
                            ng-model="$ctrl.versionLimit">
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group d-flex justify-content-center">
+                    <label class="form-text mr-2" for="check-show-unsupported">Show Unsupported</label>
+                    <input type="checkbox" class="form-control col-sm-1" id="check-show-unsupported"
+                               ng-model="$ctrl.showUnsupported">
 
                 </div>
             </div>
@@ -31,7 +39,7 @@
 <div class="row">
     <div class="col-sm-12 text-center">
         <browser-table id="SupportedBrowserTable" config="$ctrl.checkedBrowsers"
-                       version-limit="$ctrl.versionLimit"></browser-table>
+                       version-limit="$ctrl.versionLimit" show-unsupported="$ctrl.showUnsupported"></browser-table>
     </div>
 </div>
 <div class="row">

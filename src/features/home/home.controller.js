@@ -4,8 +4,20 @@
 export default class HomeController {
     constructor(CommonService){
         this.id = CommonService.guid();
+        this.showUnsupported = true;
         this.versionLimit = 5;
         this._checkedBrowsers = [
+            {
+                name: 'IE',
+                supported: true,
+                image: require('../../../node_modules/@browser-logos/internet-explorer_9-11/internet-explorer_9-11_128x128.png'),
+                support: [
+                    {version: '11', supported: true},
+                    {version: '10', supported: false},
+                    {version: '9', supported: false},
+                    {version: '8', supported: false}
+                ]
+            },
             {
                 name: 'Edge',
                 supported: true,

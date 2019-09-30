@@ -8,7 +8,8 @@ let browserTableComponent = {
     template:template,
     bindings : {
         config: '<',
-        versionLimit: '<'
+        versionLimit: '<',
+        showUnsupported: '<'
     }
 }
 
