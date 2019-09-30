@@ -7,17 +7,6 @@ export default class HomeController {
         this.versionLimit = 5;
         this._checkedBrowsers = [
             {
-                name: 'IE',
-                supported: true,
-                image: require('../../../node_modules/@browser-logos/internet-explorer_9-11/internet-explorer_9-11_128x128.png'),
-                support: [
-                    {version: '11', supported: true},
-                    {version: '10', supported: false},
-                    {version: '9', supported: false},
-                    {version: '8', supported: false}
-                ]
-            },
-            {
                 name: 'Edge',
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/edge/edge_128x128.png'),
@@ -37,6 +26,9 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/firefox/firefox_128x128.png'),
                 support: [
+                    {version: "71", supported: true},
+                    {version: "70", supported: true},
+                    {version: "69", supported: true},
                     {version: "68", supported: true},
                     {version: "67", supported: true},
                     {version: "66", supported: true},
@@ -83,6 +75,10 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/chrome/chrome_128x128.png'),
                 support: [
+                    {version: "80", supported: true},
+                    {version: "79", supported: true},
+                    {version: "78", supported: true},
+                    {version: "77", supported: true},
                     {version: "76", supported: true},
                     {version: "75", supported: true},
                     {version: "74", supported: true},
@@ -137,6 +133,8 @@ export default class HomeController {
                 supported: true,
                 image: require('../../../node_modules/@browser-logos/safari/safari_128x128.png'),
                 support: [
+                    {version: "13.1", supported: true},
+                    {version: "13", supported: true},
                     {version: "12.1", supported: true},
                     {version: "12", supported: true},
                     {version: "11.1", supported: true},
