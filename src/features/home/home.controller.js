@@ -1,11 +1,12 @@
-
+import browserslist from "browserslist";
 
 
 export default class HomeController {
     constructor(CommonService){
         this.id = CommonService.guid();
-        this.showUnsupported = true;
-        this.versionLimit = 5;
+
+        this.defaultBrowserScope = 'ie 11 , last 5 edge version, last 5 firefox version, last 5 chrome version, last 5 safari version, last 5 opera version';
+        this.browserScope = '';
         this._checkedBrowsers = [
             {
                 name: 'IE',
@@ -212,6 +213,32 @@ export default class HomeController {
 
     $onInit(){
 
+       this.updateScope();
+
+
+
+    }
+
+    updateScope(){
+        let cs = this.browserScope||this.defaultBrowserScope;
+
+        const supported = browserslist(cs, {ignoreUnknownVersions: true})
+            .map((browser) => browser.split(" "));
+
+        let blist = {};
+        supported.forEach((b)=>{
+            if(!blist[b[0]]){
+                blist[b[0]] = [];
+            }
+            blist[b[0]].push({'version':b[1],'supported':true});
+        })
+
+
+        this.checkedBrowsers.forEach((cb)=>{
+            cb.support = blist[cb.name.toLowerCase()];
+        })
+
+
     }
 
     updateBrowser(updatedBrowser) {
@@ -222,10 +249,6 @@ export default class HomeController {
                 checkedBrowser.supported = updatedBrowser.supported;
             }
         });
-
-    }
-
-    updateVersionLimit() {
 
     }
 

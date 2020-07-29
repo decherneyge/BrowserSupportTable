@@ -6,14 +6,14 @@
     </thead>
     <tbody>
     <tr>
-        <td ng-repeat="browser in $ctrl.config" ng-class="{'bg-success':$ctrl.hasFullSupport(browser),'bg-danger':!$ctrl.hasFullSupport(browser)}" ng-show="browser.supported || $ctrl.showUnsupported">
+        <td ng-repeat="browser in $ctrl.config" ng-class="{'bg-danger':!$ctrl.hasFullSupport(browser)}" ng-show="browser.supported || $ctrl.showUnsupported">
             <img ng-src="{{browser.image}}" alt="{{browser.name}}">
             <hr>
-            <p  >{{$ctrl.generateSupportDescription(browser)}}</p>
-            <hr>
+            <!--<p  >{{$ctrl.generateSupportDescription(browser)}}</p>
+            <hr>-->
             <ul class="list-unstyled">
                 <li ng-repeat="support in browser.support | limitTo:$ctrl.versionLimit"
-                    ng-class="{'bg-success':browser.supported && support.supported,'bg-danger':! browser.supported && support.supported}">{{support.version}}
+                    ng-class="{'bg-danger':! browser.supported && support.supported}">{{support.version}}
                 </li>
             </ul>
         </td>

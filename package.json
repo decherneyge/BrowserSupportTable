@@ -12,6 +12,7 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.3",
     "angular": "^1.8.0",
+    "browserslist": "^4.13.0",
     "file-saver": "^1.3.3"
   },
   "devDependencies": {
@@ -36,6 +37,6 @@
     "style-loader": "^0.20.2",
     "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^2.11.5"
   }
 }
