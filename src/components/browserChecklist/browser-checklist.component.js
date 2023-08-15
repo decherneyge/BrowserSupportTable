@@ -1,5 +1,5 @@
 import template from './browser-checklist.html';
-import styles from './browser-checklist.scss';
+import styles from './browser-checklist.css';
 import controller from './browser.checklist.controller';
 
 

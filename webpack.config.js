@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const path = require('path');
 
 
-var extractSass = new ExtractTextPlugin({
+var extractCss = new ExtractTextPlugin({
     filename: "[name].css"
 });
 
@@ -26,15 +26,13 @@ module.exports = {
                 use: ['babel-loader']
             },
             {
-                test: /\.scss$/,
-                use: extractSass.extract({
+                test: /\.css$/,
+                use: extractCss.extract({
                     use: [{
                         loader: "css-loader", options: {sourceMap: true}
                     },
                         {loader: 'postcss-loader', options: {sourceMap: true}},
-                        {
-                            loader: "sass-loader", options: {sourceMap: true}
-                        }],
+                        ],
                     // use style-loader in development
                     fallback: "style-loader"
                 })
@@ -57,7 +55,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
         }),
-        extractSass
+        extractCss
     ],
 
 

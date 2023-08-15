@@ -1,39 +1,18 @@
 <div class="jumbotron">
     <h1 class="text-center">Build a Supported Browser Table!</h1>
+    <hr>
+    <form class="">
 
-    <form>
-        <hr>
-        <div class="row mb-2">
-            <div class="col-sm-8">
-                <div class="form-group d-flex justify-content-center">
-                    <label for="versionLimit" class="form-text mr-2">Only Show This Many Past Versions</label>
-                    <input type="number" class="form-control col-sm-1" id="versionLimit" placeholder="5"
-                           ng-model="$ctrl.versionLimit">
-
+        <div class="row mb">
+            <div class="col-sm-12 text-center">
+                <div class="form-group">
+                <input class="form-control mb" type="text" ng-model="$ctrl.browserScope" placeholder="{{$ctrl.defaultBrowserScope}}" />
+                <button class="btn btn-info" type="button" ng-click="$ctrl.updateScope()">Update Scope</button>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="form-group d-flex justify-content-center">
-                    <label class="form-text mr-2" for="check-show-unsupported">Show Unsupported</label>
-                    <input type="checkbox" class="form-control col-sm-1" id="check-show-unsupported"
-                               ng-model="$ctrl.showUnsupported">
-
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <div class="col-1 mx-3" ng-repeat="browser in $ctrl.checkedBrowsers">
-                <browser-check-list browser="browser" version-limit="$ctrl.versionLimit"
-                                    on-updated="$ctrl.updateBrowser(updatedBrowser)"></browser-check-list>
-            </div>
-
-            <div class="col-sm" ng-if="false">
-                <pre>{{$ctrl.checkedBrowsers | json}}</pre>
-            </div>
-
 
         </div>
+
     </form>
 </div>
 <div class="row">
