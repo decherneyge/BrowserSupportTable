@@ -9,7 +9,8 @@ let browserTableComponent = {
     bindings : {
         config: '<',
         versionLimit: '<',
-        showUnsupported: '<'
+        showUnsupported: '<',
+        fullText: '<',
     }
 }
 

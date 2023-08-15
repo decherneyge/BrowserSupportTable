@@ -4,20 +4,37 @@
     <form class="">
 
         <div class="row mb">
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-8">
                 <div class="form-group">
-                <input class="form-control mb" type="text" ng-model="$ctrl.browserScope" placeholder="{{$ctrl.defaultBrowserScope}}" />
-                <button class="btn btn-info" type="button" ng-click="$ctrl.updateScope()">Update Scope</button>
+                    <label class="form-label" for="browserScope">Scope</label>
+                <input class="form-control mb" id="browserScope" type="text" ng-model="$ctrl.browserScope" placeholder="{{$ctrl.defaultBrowserScope}}" />
+
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <label class="form-label" for="displayLimit">Display Limit</label>
+                <input class="form-control" id="displayLimit" ng-model="$ctrl.versionLimit" placeholder="{{$ctrl.versionLimit}}" />
+            </div>
+            <div class="col-sm-2">
+                <label class="form-label" for="rename">Full Text</label>
+                <div class="checkbox">
+                <label for="rename">
+                <input id="rename" ng-model="$ctrl.useFull" type="checkbox" /> Use Full</label>
                 </div>
             </div>
 
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-info" type="button" ng-click="$ctrl.updateScope()">Update Scope</button>
+            </div>
         </div>
 
     </form>
 </div>
 <div class="row">
     <div class="col-sm-12 text-center">
-        <browser-table id="SupportedBrowserTable" config="$ctrl.checkedBrowsers"
+        <browser-table id="SupportedBrowserTable" config="$ctrl.checkedBrowsers" full-text="$ctrl.useFull? 'Full' : ''"
                        version-limit="$ctrl.versionLimit" show-unsupported="$ctrl.showUnsupported"></browser-table>
     </div>
 </div>

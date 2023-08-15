@@ -5,12 +5,12 @@ export default class HomeController {
     constructor(CommonService){
         this.id = CommonService.guid();
 
-        this.defaultBrowserScope = 'last 5 edge version, last 5 firefox version, last 5 chrome version, last 5 safari version, last 5 opera version';
-        this.browserScope = '';
+        this.defaultBrowserScope = 'ie 11, last 5 edge version, last 5 firefox version, last 5 chrome version, last 5 safari version, last 5 opera version';
+        this.browserScope =  this.defaultBrowserScope;
         this._checkedBrowsers = [
             {
                 name: 'IE',
-                supported: false,
+                supported: true,
                 image: require('../../../node_modules/@browser-logos/internet-explorer_9-11/internet-explorer_9-11_128x128.png'),
                 support: [
                     {version: '11', supported: true},
@@ -209,6 +209,9 @@ export default class HomeController {
 
         ];
         this.checkedBrowsers = angular.copy(this._checkedBrowsers);
+        this.versionLimit = 0;
+        this.showUnsupported = false;
+        this.useFull = false;
     }
 
     $onInit(){
@@ -235,7 +238,12 @@ export default class HomeController {
 
 
         this.checkedBrowsers.forEach((cb)=>{
-            cb.support = blist[cb.name.toLowerCase()];
+            const support = blist[cb.name.toLowerCase()]
+            if(!support){
+                cb.supported = false;
+                return;
+            }
+            cb.support = support;
         })
 
 
