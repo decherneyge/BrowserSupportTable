@@ -1,0 +1,20 @@
+browser-table {
+
+    display: inline-block;
+    background-color: white;
+}
+
+browser-table table {
+    background-color: white;
+}
+
+browser-table th {
+    background-color: white;
+}
+
+browser-table .list-unstyled {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+

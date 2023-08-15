@@ -108,7 +108,8 @@ class DomImageController {
                 if(this.showImage) {
                     canvas.insertAdjacentHTML('afterend', newImg.outerHTML);
                 }
-                FileSaver.saveAs(blob, "SupportedBrowsersTable.png");
+                const today = new Date().toISOString().slice(0, 10);
+                FileSaver.saveAs(blob, `SupportedBrowsersTable-${today}.png`);
                 this.isUpdatingImage = false;
 
             });

@@ -5,12 +5,12 @@ export default class HomeController {
     constructor(CommonService){
         this.id = CommonService.guid();
 
-        this.defaultBrowserScope = 'ie 11 , last 5 edge version, last 5 firefox version, last 5 chrome version, last 5 safari version, last 5 opera version';
+        this.defaultBrowserScope = 'last 5 edge version, last 5 firefox version, last 5 chrome version, last 5 safari version, last 5 opera version';
         this.browserScope = '';
         this._checkedBrowsers = [
             {
                 name: 'IE',
-                supported: true,
+                supported: false,
                 image: require('../../../node_modules/@browser-logos/internet-explorer_9-11/internet-explorer_9-11_128x128.png'),
                 support: [
                     {version: '11', supported: true},

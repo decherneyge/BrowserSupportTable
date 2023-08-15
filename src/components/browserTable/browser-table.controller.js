@@ -5,7 +5,7 @@ export default class BrowserTableController {
     }
 
     generateSupportDescription(browser) {
-        return browser.supported && browser.support.every((version) => version.supported) ? 'Full' : browser.supported && browser.support.some((version) => version.supported) ? 'Some' : 'None';
+        return browser.supported && browser.support.every((version) => version.supported) ? `Latest ${browser.support.length} Versions` : browser.supported && browser.support.some((version) => version.supported) ? 'Some' : 'None';
     };
 
     hasFullSupport(browser) {

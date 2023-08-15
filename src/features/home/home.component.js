@@ -1,6 +1,6 @@
 
 import template from './home.component.html';
-import componentStyles from './home.scss';
+import componentStyles from './home.css';
 import controller from './home.controller';
 
 

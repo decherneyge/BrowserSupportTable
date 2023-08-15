@@ -1,6 +1,6 @@
 
 import template from './browser-table.html';
-import componentStyles from './browser-table.style.scss';
+import componentStyles from './browser-table.style.css';
 import controller from './browser-table.controller';
 
 let browserTableComponent = {
