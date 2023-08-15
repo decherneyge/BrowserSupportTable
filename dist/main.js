@@ -139,7 +139,7 @@ var BrowserTableController = function () {
         value: function generateSupportDescription(browser) {
             return browser.supported && browser.support.every(function (version) {
                 return version.supported;
-            }) ? 'Full' : browser.supported && browser.support.some(function (version) {
+            }) ? `Latest ${browser.support.length} Versions` : browser.supported && browser.support.some(function (version) {
                 return version.supported;
             }) ? 'Some' : 'None';
         }
